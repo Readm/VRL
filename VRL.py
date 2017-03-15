@@ -555,7 +555,7 @@ Format: attach          attach the vulnerability.
 
     def do_aslr(self, line):
         '''Check status/Turn on/Turn off ASLR of system.
-Format: aslr status/frame_check/on/off/conservative'''
+Format: aslr status/check/on/off/conservative'''
         if line in ['status', 'frame_check', 'on', 'off', 'conservative']:
             if line[1] in ['h', 't']:
                 state = aslr_status()
@@ -579,7 +579,7 @@ Format: aslr status/frame_check/on/off/conservative'''
             self.do_help('aslr')
 
     def complete_aslr(self, text, line, begidx, endidx):
-        return [i for i in ['status', 'frame_check', 'on', 'off', 'conservative'] if i.startswith(text)]
+        return [i for i in ['status', 'check', 'on', 'off', 'conservative'] if i.startswith(text)]
 
     def do_coloroff(self, line):
         '''Turn off color of prompt'''
